@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './pages/Home';
 import About from './pages/About';
 import Product from './pages/Product';
+import Users from './pages/Users';
 
 const HomePage = () => (
   <Home />
@@ -17,8 +18,12 @@ const ProductPage = () => (
   <Product />
 )
 
+const UserPage = () => (
+  <Users />
+)
 
-class TopMainContent extends Component {
+
+class Content extends Component {
   render() {
      return (
         <Router>
@@ -26,11 +31,12 @@ class TopMainContent extends Component {
               <Route exact path="/" component={HomePage} />
               <Route path="/about" component={AboutPage} />
               <Route path="/product" component={ProductPage} />
+              <Route path="/user" component={UserPage} />
             </div>
         </Router>
      );
   }
 }
 
-export default TopMainContent;
+export default Content;
 
