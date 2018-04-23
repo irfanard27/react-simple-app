@@ -44,7 +44,7 @@ class Users extends Component {
                           { this.state.users.map((user,index) =>
                                 <tr key={index}>
                                     <td><span className="text-muted">{index+1}</span></td>
-                                    <td><a href="#" className="text-inherit">{ user.nama}</a></td>
+                                    <td><a href={"/user_detail/" + user.nama} className="text-inherit">{ user.nama}</a></td>
                                     <td>
                                         { user.email }
                                     </td>

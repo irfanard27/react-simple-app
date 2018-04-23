@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Product from './pages/Product';
 import Users from './pages/Users';
+import UserDetail from './pages/UserDetail';
+
 
 const HomePage = () => (
   <Home />
@@ -22,6 +24,9 @@ const UserPage = () => (
   <Users />
 )
 
+const UserDetailPage = ({ match }) => (
+  <UserDetail name={match.params.name} />
+)
 
 class Content extends Component {
   render() {
@@ -32,6 +37,7 @@ class Content extends Component {
               <Route path="/about" component={AboutPage} />
               <Route path="/product" component={ProductPage} />
               <Route path="/user" component={UserPage} />
+              <Route path="/user_detail/:name" component={UserDetailPage} />
             </div>
         </Router>
      );
